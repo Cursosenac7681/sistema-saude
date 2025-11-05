@@ -806,11 +806,21 @@ body.dark-mode .view-btn {
   </footer>
 
   <script>
-    let units = [
-      { name: "CAIS Central", type: "CAIS", address: "Rua das Flores", number: "120", city: "Centro", phone: "(62) 99999-9999", map: "#" },
-      { name: "UBS Jardim Aurora", type: "UBS", address: "Av. Goiás", number: "400", city: "Jardim Aurora", phone: "(62) 98888-8888", map: "#" },
-    ];
-
+  let units = [];
+  
+  const githubJsonURL = "https://raw.githubusercontent.com/SEU_USUARIO/sistema-saude/main/unidades.json";
+  
+  // Carrega o arquivo JSON do GitHub
+  fetch(githubJsonURL)
+    .then(res => res.json())
+    .then(data => {
+      units = data;
+      renderUnits();
+    })
+    .catch(err => {
+      console.error("Erro ao carregar JSON:", err);
+      renderUnits(); // fallback
+    });
     const container = document.querySelector("#cards");
     const searchInput = document.getElementById("search");
     const adminPanel = document.getElementById("adminPanel");
@@ -1125,4 +1135,5 @@ if (localStorage.getItem("isAdmin") === "true") {
 
   </script>
 </body>
+
 </html>
