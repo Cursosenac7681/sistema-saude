@@ -1,0 +1,20 @@
+[
+  {
+    "name": "CAIS Central",
+    "type": "CAIS",
+    "address": "Rua das Flores",
+    "number": "120",
+    "city": "Centro",
+    "phone": "(62) 99999-9999",
+    "map": "#"
+  },
+  {
+    "name": "UBS Jardim Aurora",
+    "type": "UBS",
+    "address": "Av. Goiás",
+    "number": "400",
+    "city": "Jardim Aurora",
+    "phone": "(62) 98888-8888",
+    "map": "#"
+  }
+]
